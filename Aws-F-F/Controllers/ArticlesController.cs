@@ -95,5 +95,65 @@ namespace Aws_F_F.Controllers
             return View(article);
         }
 
+
+        // GET: Edit
+        public async Task<IActionResult> Edit(int? id)
+        {
+            if (id == null)
+                return NotFound();
+
+            var article = await _context.Articles.FindAsync(id);
+            if (article == null)
+                return NotFound();
+
+            return View(article);
+        }
+
+        // POST: Edit
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> Edit(int id, Article article, IFormFile? imageFile)
+        {
+            if (id != article.Id)
+                return NotFound();
+
+            if (ModelState.IsValid)
+            {
+                try
+                {
+                    if (imageFile != null)
+                    {
+                        var uploadsFolder = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot/uploads");
+                        Directory.CreateDirectory(uploadsFolder);
+                        var fileName = Guid.NewGuid().ToString() + Path.GetExtension(imageFile.FileName);
+                        var filePath = Path.Combine(uploadsFolder, fileName);
+
+                        using (var stream = new FileStream(filePath, FileMode.Create))
+                        {
+                            await imageFile.CopyToAsync(stream);
+                        }
+
+                        article.ImagePath = "/uploads/" + fileName;
+                    }
+
+                    _context.Update(article);
+                    await _context.SaveChangesAsync();
+                }
+                catch (DbUpdateConcurrencyException)
+                {
+                    if (!_context.Articles.Any(e => e.Id == article.Id))
+                        return NotFound();
+                    else
+                        throw;
+                }
+
+                return RedirectToAction(nameof(Index));
+            }
+
+            return View(article);
+        }
+
+
+
     }
 }

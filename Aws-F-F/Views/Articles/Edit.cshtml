@@ -1,0 +1,33 @@
+﻿@model Aws_F_F.Models.Article
+
+<h2>تعديل المقال</h2>
+
+<form asp-action="Edit" method="post" enctype="multipart/form-data">
+    <input type="hidden" asp-for="Id" />
+
+    <div class="mb-3">
+        <label asp-for="Title" class="form-label"></label>
+        <input asp-for="Title" class="form-control" />
+    </div>
+
+    <div class="mb-3">
+        <label asp-for="Content" class="form-label"></label>
+        <textarea asp-for="Content" class="form-control" rows="5"></textarea>
+    </div>
+
+    <div class="mb-3">
+        <label>الصورة الحالية:</label><br />
+        @if (!string.IsNullOrEmpty(Model.ImagePath))
+        {
+            <img src="@Model.ImagePath" width="150" class="mb-2" />
+        }
+    </div>
+
+    <div class="mb-3">
+        <label>تغيير الصورة:</label>
+        <input type="file" name="imageFile" class="form-control" />
+    </div>
+
+    <button type="submit" class="btn btn-primary">تحديث</button>
+    <a asp-action="Index" class="btn btn-secondary">إلغاء</a>
+</form>
