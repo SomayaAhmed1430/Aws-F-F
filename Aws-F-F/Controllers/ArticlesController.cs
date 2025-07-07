@@ -154,6 +154,33 @@ namespace Aws_F_F.Controllers
         }
 
 
+        public async Task<IActionResult> Delete(int? id)
+        {
+            if (id == null)
+                return NotFound();
+
+            var article = await _context.Articles
+                .FirstOrDefaultAsync(m => m.Id == id);
+            if (article == null)
+                return NotFound();
+
+            return View(article);
+        }
+
+        [HttpPost, ActionName("Delete")]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> DeleteConfirmed(int id)
+        {
+            var article = await _context.Articles.FindAsync(id);
+            if (article != null)
+            {
+                _context.Articles.Remove(article);
+                await _context.SaveChangesAsync();
+            }
+
+            return RedirectToAction(nameof(Index));
+        }
+
 
     }
 }

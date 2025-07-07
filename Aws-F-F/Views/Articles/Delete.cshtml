@@ -1,0 +1,20 @@
+﻿@model Aws_F_F.Models.Article
+
+<h2>تأكيد الحذف</h2>
+
+<div class="card p-3 shadow-sm">
+    <h3>هل أنت متأكد من حذف المقال التالي؟</h3>
+    <p><strong>العنوان:</strong> @Model.Title</p>
+    <p><strong>تاريخ النشر:</strong> @Model.PublishDate.ToString("yyyy-MM-dd")</p>
+
+    @if (!string.IsNullOrEmpty(Model.ImagePath))
+    {
+        <img src="@Model.ImagePath" class="img-thumbnail" style="max-width: 200px;" />
+    }
+
+    <form asp-action="Delete" method="post">
+        <input type="hidden" asp-for="Id" />
+        <button type="submit" class="btn btn-danger mt-3">حذف</button>
+        <a asp-action="Index" class="btn btn-secondary mt-3">إلغاء</a>
+    </form>
+</div>
