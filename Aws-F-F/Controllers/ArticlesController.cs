@@ -81,5 +81,19 @@ namespace Aws_F_F.Controllers
         }
 
 
+        public async Task<IActionResult> Details(int? id)
+        {
+            if (id == null)
+                return NotFound();
+
+            var article = await _context.Articles
+                .FirstOrDefaultAsync(a => a.Id == id);
+
+            if (article == null)
+                return NotFound();
+
+            return View(article);
+        }
+
     }
 }

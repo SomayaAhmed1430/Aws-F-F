@@ -1,0 +1,19 @@
+﻿@model Aws_F_F.Models.Article
+
+<h2>تفاصيل المقال</h2>
+
+<div class="card p-3 shadow-sm">
+    <h3>@Model.Title</h3>
+    <p><strong>تاريخ النشر:</strong> @Model.PublishDate.ToString("yyyy-MM-dd")</p>
+
+    @if (!string.IsNullOrEmpty(Model.ImagePath))
+    {
+        <img src="@Model.ImagePath" class="img-fluid mb-3" style="max-width:300px" />
+    }
+
+    <div class="article-content">
+    @Html.Raw(Model.Content)
+    </div>
+
+    <a asp-action="Index" class="btn btn-secondary mt-3">رجوع</a>
+</div>
