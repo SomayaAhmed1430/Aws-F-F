@@ -1,0 +1,67 @@
+﻿@model Aws_F_F.Models.Article
+
+    <!-- Quill CSS -->
+    <link href="https://cdn.quilljs.com/1.3.6/quill.snow.css" rel="stylesheet">
+    <style>
+        #editor {
+            direction: rtl;
+            text-align: right;
+        }
+    </style>
+
+
+    <h2>إضافة مقال جديد</h2>
+
+    <form asp-action="Create" method="post" enctype="multipart/form-data" onsubmit="return submitForm()">
+        <div class="form-group">
+            <label>العنوان</label>
+            <input asp-for="Title" class="form-control" />
+        </div>
+
+        <div class="form-group">
+            <label>إرفاق صورة (اختياري)</label>
+            <input type="file" name="imageFile" class="form-control" />
+        </div>
+
+        <div class="form-group">
+            <label>المحتوى</label>
+            <!-- المحرر هيظهر هنا -->
+            <div id="editor" style="height: 300px; background-color: white;"></div>
+
+            <!-- هنحط المحتوى هنا بشكل مخفي علشان يتبعت مع الفورم -->
+            <input type="hidden" id="Content" name="Content" />
+        </div>
+
+        <button type="submit" class="btn btn-success">حفظ</button>
+    <a asp-action="Index" class="btn btn-success">الرجوع</a>
+    </form>
+
+    <!-- Quill JS -->
+    <script src="https://cdn.quilljs.com/1.3.6/quill.min.js"></script>
+
+    <script>
+        // تهيئة المحرر
+            var quill = new Quill('#editor', {
+          theme: 'snow',
+          modules: {
+            toolbar: [
+              [{ 'direction': 'rtl' }, { 'align': [] }],
+              [{ header: [1, 2, false] }],
+              ['bold', 'italic', 'underline'],
+              [{ list: 'ordered' }, { list: 'bullet' }],
+              ['link', 'image'],
+              ['clean']
+            ]
+          },
+          placeholder: 'اكتب مقالك هنا...',
+        });
+
+
+        // قبل إرسال الفورم، نحط المحتوى اللي اتكتب في input اسمه Content
+        function submitForm() {
+            var html = quill.root.innerHTML;
+            document.getElementById("Content").value = html;
+            return true;
+        }
+    </script>
+
