@@ -12,8 +12,44 @@
     }
 
     <div class="article-content">
-    @Html.Raw(Model.Content)
+        @Html.Raw(Model.Content)
     </div>
 
     <a asp-action="Index" class="btn btn-secondary mt-3">رجوع</a>
 </div>
+
+<style>
+    .article-content {
+        direction: rtl;
+    }
+
+    .article-content img {
+        max-width: 100%;
+        height: auto;
+        display: block;
+        margin: 10px auto;
+    }
+
+    /* دعم المحاذاة اللي Quill بيضيفها كـ class */
+    .article-content .ql-align-center {
+        text-align: center;
+    }
+
+    .article-content .ql-align-right {
+        text-align: right;
+    }
+
+    .article-content .ql-align-left {
+        text-align: left;
+    }
+
+    .article-content p,
+    .article-content div,
+    .article-content h1,
+    .article-content h2 {
+        margin-bottom: 1rem;
+    }
+</style>
+
+
+
