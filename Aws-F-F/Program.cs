@@ -1,4 +1,5 @@
 using Aws_F_F.Data;
+using Microsoft.AspNetCore.Http.Features;
 using Microsoft.EntityFrameworkCore;
 
 namespace Aws_F_F
@@ -14,6 +15,11 @@ namespace Aws_F_F
 
             builder.Services.AddDbContext<ApplicationDbContext>(options =>
                 options.UseSqlServer(builder.Configuration.GetConnectionString("cs")));
+
+            builder.Services.Configure<FormOptions>(options =>
+            {
+                options.MultipartBodyLengthLimit = 1024 * 1024 * 500; // 500 MB
+            });
 
 
             var app = builder.Build();

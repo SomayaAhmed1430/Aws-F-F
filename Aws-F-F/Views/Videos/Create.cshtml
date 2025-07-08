@@ -1,0 +1,32 @@
+﻿@model Aws_F_F.Models.Video
+
+@{
+    ViewData["Title"] = "إضافة فيديو جديد";
+}
+
+<h2 class="text-center">إضافة فيديو جديد</h2>
+
+<form asp-action="Create" enctype="multipart/form-data" method="post">
+    <div class="mb-3">
+        <label asp-for="Title" class="form-label"></label>
+        <input asp-for="Title" class="form-control" />
+        <span asp-validation-for="Title" class="text-danger"></span>
+    </div>
+
+    <div class="mb-3">
+        <label asp-for="Description" class="form-label"></label>
+        <textarea asp-for="Description" class="form-control"></textarea>
+    </div>
+
+    <div class="mb-3">
+        <label class="form-label">رفع الفيديو (جودة عالية)</label>
+        <input type="file" name="videoFile" class="form-control" accept="video/*" />
+    </div>
+
+    <button type="submit" class="btn btn-primary">حفظ</button>
+    <a asp-action="Index" class="btn btn-secondary">رجوع</a>
+</form>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}
