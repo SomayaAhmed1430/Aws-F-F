@@ -60,6 +60,25 @@ namespace Aws_F_F.Controllers
             return View(video);
         }
 
+        public async Task<IActionResult> Delete(int? id)
+        {
+            if (id == null) return NotFound();
+            
+            var video = await _context.Videos.FindAsync(id);
+            if (video == null) return NotFound();
 
+            // حذف الفيديو من السيرفر
+            if (!string.IsNullOrEmpty(video.VideoPath))
+            {
+                string filePath = Path.Combine(_webHostEnvironment.WebRootPath, video.VideoPath.TrimStart('/'));
+                if (System.IO.File.Exists(filePath))
+                {
+                    System.IO.File.Delete(filePath);
+                }
+            }
+            _context.Videos.Remove(video);
+            await _context.SaveChangesAsync();
+            return RedirectToAction(nameof(Index));
+        }
     }
 }
