@@ -1,10 +1,13 @@
 ﻿@model IEnumerable<Aws_F_F.Models.Video>
 
 @{
+    Layout = "~/Views/Shared/_DashboardLayout.cshtml";
     ViewData["Title"] = "قائمة الفيديوهات";
 }
 
 <h2 class="text-center">قائمة الفيديوهات</h2>
+
+<a class="btn btn-success" href="@Url.Action("Create")">إضافة فيديو جديد</a>
 
 <table class="table table-bordered table-striped">
     <thead class="table-dark">
@@ -46,4 +49,3 @@
     </tbody>
 </table>
 
-<a class="btn btn-success" href="@Url.Action("Create")">إضافة فيديو جديد</a>

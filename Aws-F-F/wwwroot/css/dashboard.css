@@ -1,0 +1,181 @@
+﻿body {
+    font-family: 'Cairo', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #ffffff; /* خلفية بيضاء */
+    direction: rtl;
+}
+
+.dashboard-container {
+    display: flex;
+    flex-direction: row; /* علشان السايد بار يجي على اليمين */
+    min-height: 100vh;
+}
+
+.sidebar {
+    width: 220px;
+    background-color: #000; /* أسود */
+    color: #fff; /* نص أبيض */
+    padding: 20px;
+}
+
+    .sidebar ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+    }
+
+        .sidebar ul li {
+            margin-bottom: 15px;
+        }
+
+            .sidebar ul li a {
+                color: #fff;
+                text-decoration: none;
+                display: block;
+                padding: 8px 10px;
+                border-radius: 4px;
+            }
+
+                .sidebar ul li a:hover {
+                    background-color: #222;
+                }
+
+.main-content {
+    flex: 1;
+    padding: 20px;
+    background-color: #fff;
+    color: #000;
+}
+
+/* الأزرار */
+button, .btn {
+    background-color: #000;
+    color: #fff;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+    button:hover, .btn:hover {
+        background-color: #333;
+    }
+
+form {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 6px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
+}
+
+    form label {
+        display: block;
+        margin-bottom: 6px;
+        color: #000;
+        font-weight: 500;
+    }
+
+    form input[type="text"],
+    form input[type="file"],
+    form textarea,
+    form select {
+        width: 100%;
+        padding: 10px;
+        margin-bottom: 15px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        background-color: #f9f9f9;
+        color: #000;
+    }
+
+    form input[type="submit"],
+    form button,
+    form .btn {
+        background-color: #000;
+        color: #fff;
+        padding: 10px 20px;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+    }
+
+        form input[type="submit"]:hover,
+        form button:hover,
+        form .btn:hover {
+            background-color: #333;
+        }
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+    background-color: #fff;
+    border-radius: 6px;
+    overflow: hidden;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
+}
+
+thead {
+    background-color: #000;
+    color: #fff;
+}
+
+    thead th {
+        padding: 12px;
+        text-align: center;
+    }
+
+tbody td {
+    padding: 10px;
+    text-align: center;
+    color: #000;
+    border-top: 1px solid #ddd;
+    vertical-align: middle;
+}
+
+tbody tr:hover {
+    background-color: #f0f0f0;
+}
+
+.btn {
+    padding: 6px 12px;
+    border-radius: 4px;
+    font-size: 0.9rem;
+    text-decoration: none;
+}
+
+.btn-sm {
+    padding: 5px 10px;
+}
+
+.btn-info {
+    background-color: #000;
+    color: #fff;
+    border: none;
+}
+
+    .btn-info:hover {
+        background-color: #333;
+    }
+
+.btn-danger {
+    background-color: #9f1c1c;
+    color: #fff;
+    border: none;
+}
+
+    .btn-danger:hover {
+        background-color: #7a1010;
+    }
+
+.btn-success {
+    background-color: #000;
+    color: #fff;
+    border: none;
+    margin-top: 10px;
+}
+
+    .btn-success:hover {
+        background-color: #333;
+    }
