@@ -1,0 +1,28 @@
+﻿@model IEnumerable<Aws_F_F.Models.Video>
+
+@{
+    Layout = "~/Views/Shared/_MainLayout.cshtml";
+    ViewData["Title"] = "Home Page";
+}
+
+<section class="videos container">
+    <h2 class="text-center">اللقاءات والفيديوهات</h2>
+    <div class="row">
+        @foreach (var item in Model)
+        {
+            <div class="col-md-6 mb-4">
+                <div class="card shadow-sm p-3">
+                    <h5>@item.Title</h5>
+                    @if (!string.IsNullOrEmpty(item.VideoPath))
+                    {
+                        <video width="100%" controls>
+                            <source src="@item.VideoPath" type="video/mp4">
+                            المتصفح لا يدعم عرض الفيديو
+                        </video>
+                    }
+                    <p class="mt-2">@item.Description</p>
+                </div>
+            </div>
+        }
+    </div>
+</section>

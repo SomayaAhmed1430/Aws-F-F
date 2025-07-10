@@ -1,0 +1,555 @@
+﻿* {
+    padding: 00;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: careemregu;
+    line-height: 30px;
+    list-style: none;
+}
+
+@font-face {
+    font-family: careemRegu;
+    src: url(/fonts/careemRegular.otf);
+}
+
+@font-face {
+    font-family: careemBold;
+    src: url(/fonts/careemBold.otf);
+}
+
+:root {
+    --background-color: #fff;
+    --color-: #000;
+    --max-width: 1400px;
+    --font-size: 20px;
+}
+
+body {
+    max-width: 100%;
+    overflow-x: hidden;
+}
+
+.container {
+    margin: 50px auto;
+    max-width: var(--max-width);
+}
+
+    .container section {
+        min-height: 400px;
+        width: 100%;
+        margin: 0 0 150px 0;
+    }
+/* statics */
+
+.hero {
+    position: relative;
+    height: 500px;
+    background: black;
+    margin: 0 0 150px 0;
+}
+
+    .hero::after {
+        content: "لتقديم إستشارات تقنيه حول الألعاب الإلكترونية , والأمن السيبراني , والذكاء الإصطناعي و أي مشكلة لها علاقة بوسائل  التواصل الإجتماعي";
+        position: absolute;
+        background: var(--background-color);
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 600px;
+        text-align: center;
+        padding: 30px 50px;
+        border-radius: 20px;
+        font-size: var(--font-size);
+        box-shadow: 0 0 30px #6565656e;
+    }
+
+    .hero .container {
+        height: 100%;
+        margin: 0 auto;
+    }
+
+        .hero .container .content {
+            height: 100%;
+            width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+            .hero .container .content .image {
+                height: 100%;
+                width: 40%;
+                display: flex;
+                align-items: flex-end;
+                justify-content: center;
+            }
+
+                .hero .container .content .image img {
+                    height: auto;
+                    width: 430px;
+                }
+
+            .hero .container .content .text {
+                position: relative;
+                width: 60%;
+                text-align: right;
+            }
+
+                .hero .container .content .text h1 {
+                    color: var(--background-color);
+                    font-size: 45px;
+                }
+
+                .hero .container .content .text p.main {
+                    color: var(--background-color);
+                    font-size: var(--font-size);
+                    padding: 20px 0;
+                }
+
+                .hero .container .content .text p.second {
+                    position: absolute;
+                    right: 10%;
+                    height: fit-content;
+                    color: var(--background-color);
+                    font-size: var(--font-size);
+                }
+
+                .hero .container .content .text p span {
+                    font-size: 30px;
+                }
+/* Hero Section */
+
+.section1 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+    .section1 .card {
+        width: 250px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        padding: 20px;
+        background: #f3f3f3;
+        box-shadow: 0 0 30px #6565656e;
+        border-radius: 10px;
+        margin: 10px;
+    }
+
+        .section1 .card:nth-child(2) {
+            z-index: 1;
+            transform: scale(1.2);
+        }
+
+        .section1 .card p {
+            text-align: center;
+        }
+/* section one */
+
+.tip {
+    background-color: var(--color-);
+    text-align: center;
+    padding: 50px 0;
+    margin: 0 0 150px 0;
+}
+
+    .tip p {
+        color: var(--background-color);
+        font-size: var(--font-size);
+    }
+/* tip  */
+
+header {
+    padding: 20px 0;
+    text-align: center;
+    font-weight: lighter;
+    letter-spacing: -0.05em;
+}
+
+.section2 .content {
+    width: 70%;
+    margin: 20px auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+}
+
+    .section2 .content .card {
+        padding: 20px 0;
+        text-align: center;
+    }
+
+        .section2 .content .card h4 {
+            font-size: 30px;
+            margin: 0 0 10px 0;
+            font-weight: lighter;
+        }
+
+        .section2 .content .card img {
+            width: 100%;
+            margin: 0 0 15px 0;
+        }
+
+        .section2 .content .card p {
+            font-size: var(--font-size);
+        }
+/* section2  */
+
+.container .section3 {
+    text-align: center;
+    min-height: unset;
+}
+
+.section3 p {
+    width: 60%;
+    font-size: var(--font-size);
+    margin: 20px auto;
+}
+/* section 3 */
+
+.container .section4 {
+    text-align: right;
+}
+
+.section4 p {
+    width: 60%;
+    font-size: var(--font-size);
+    margin: 20px auto;
+}
+
+    .section4 p:nth-child(3) {
+        font-size: var(--font-size);
+        margin: 20px auto 0px auto;
+    }
+
+.section4 ul {
+    margin: 10px 0;
+}
+
+    .section4 ul li p {
+        width: 60%;
+        font-size: var(--font-size);
+        padding: 0 30px 0 0;
+        margin: 0 auto;
+    }
+/* section4  */
+
+footer {
+    height: 400px;
+}
+
+    footer .head {
+        width: 100%;
+        background: #f3f3f3;
+    }
+
+        footer .head .head-content {
+            width: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin: 0 auto 20px auto;
+            padding: 20px 0;
+        }
+
+            footer .head .head-content a {
+                font-size: var(--font-size);
+                font-weight: lighter;
+                color: var(--color-);
+                text-decoration: none;
+                display: flex;
+                align-items: center;
+                justify-content: start;
+            }
+
+                footer .head .head-content a img {
+                    height: auto;
+                    width: 30px;
+                    margin: 0 0 0 10px;
+                }
+
+    footer .socail {
+        width: var(--max-width);
+        margin: 20px auto 0 auto;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 10px;
+    }
+
+        footer .socail li a img {
+            height: auto;
+            width: 40px;
+            border-radius: 10000px;
+        }
+
+    footer h2 {
+        font-weight: 100;
+    }
+
+@media screen and (max-width: 1470px) {
+    :root {
+        --max-width: 1000px;
+        --font-size: 17px;
+    }
+
+    .hero .container .content .image {
+        width: 40%;
+    }
+
+        .hero .container .content .image img {
+            width: 100%;
+        }
+
+    .hero .container .content .text h1 {
+        color: var(--background-color);
+        font-size: 35px;
+    }
+}
+
+@media screen and (max-width: 1350px) {
+    .section3 p {
+        width: 100%;
+        margin: 20px auto;
+    }
+    /* .section4 p {
+    width: 100%;
+    margin: 20px auto;
+  }
+  .section4 p:nth-child(3) {
+    width: 100%;
+    margin: 20px auto 0px auto;
+  } */
+    .container section {
+        margin: 0 0 100px 0;
+    }
+
+    .hero {
+        margin: 0 0 100px 0;
+    }
+
+    .tip {
+        margin: 0 0 100px 0;
+    }
+}
+
+@media screen and (max-width: 1075px) {
+    :root {
+        --max-width: 800px;
+        --font-size: 15px;
+    }
+
+    .hero {
+        height: 420px;
+    }
+
+        .hero::after {
+            padding: 10px 50px;
+        }
+
+        .hero .container .content .text p.second {
+            position: unset;
+            right: 0;
+        }
+
+    .section1 .card {
+        width: 200px;
+    }
+
+        .section1 .card img {
+            height: auto;
+            width: 100px;
+        }
+
+        .section1 .card:nth-child(2) {
+            z-index: 1;
+            transform: scale(1.1);
+        }
+
+    .section4 p {
+        width: 100%;
+    }
+
+    .section4 ul li p {
+        width: 100%;
+        margin: 10px 0;
+    }
+
+    header h2 {
+        font-size: 20px;
+    }
+
+    .tip {
+        padding: 20px 0;
+    }
+
+    .container section {
+        margin: 0 0 70px 0;
+    }
+
+    .hero {
+        margin: 0 0 70px 0;
+    }
+
+    .tip {
+        margin: 0 0 70px 0;
+    }
+}
+
+@media screen and (max-width: 840px) {
+    :root {
+        --max-width: 400px;
+        --font-size: 14px;
+    }
+
+    .hero {
+        min-height: 611px;
+        padding: 50px 0;
+    }
+
+        .hero .container .content {
+            flex-direction: column-reverse;
+        }
+
+        .hero::after {
+            padding: 10px 50px;
+            display: none;
+        }
+
+        .hero .container .content .image {
+            width: 70%;
+            margin: 0 0 20px 0;
+        }
+
+        .hero .container .content .text {
+            position: relative;
+            width: 100%;
+            text-align: right;
+        }
+
+            .hero .container .content .text h1 {
+                font-size: 25px;
+            }
+
+            .hero .container .content .text p.main br,
+            .hero .container .content .text p.second br {
+                display: none;
+            }
+
+    .section1 {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+        .section1 .card {
+            width: 100%;
+            margin: 0;
+        }
+
+            .section1 .card:nth-child(2) {
+                z-index: 1;
+                transform: unset;
+            }
+
+    .tip p br {
+        display: none;
+    }
+
+    .section2 .content {
+        width: 100%;
+        margin: 20px auto;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .section4 ul li p {
+        padding: 0 10px 0 0;
+    }
+
+    .tip {
+        padding: 20px;
+    }
+
+    .container section {
+        margin: 0 0 50px 0;
+    }
+
+    .hero {
+        margin: 0 0 50px 0;
+    }
+
+    .tip {
+        margin: 0 0 50px 0;
+    }
+
+    footer .head .head-content a img {
+        height: auto;
+        width: 20px;
+        margin: 0 0 0 10px;
+    }
+}
+
+@media screen and (max-width: 680px) {
+    footer .head-content {
+        flex-wrap: wrap;
+    }
+
+    footer .head .head-content a {
+        margin: 10px 0;
+    }
+
+    footer .head .head-content {
+        width: var(--max-width);
+        margin: 0 auto 20px auto;
+        padding: 20px;
+    }
+}
+
+@media screen and (max-width: 450px) {
+    :root {
+        --max-width: 320px;
+        --font-size: 14px;
+    }
+
+    .hero {
+        min-height: 638px;
+        padding: 50px 0;
+    }
+
+        .hero .container .content .image {
+            width: 90%;
+            margin: 0 0 20px 0;
+        }
+
+        .hero .container .content .text p.main {
+            padding: 10px 0;
+        }
+
+            .hero .container .content .text p.main br,
+            .hero .container .content .text p.second br {
+                display: none;
+            }
+
+    .section2 .content {
+        grid-template-columns: 1fr;
+    }
+
+    footer .head .head-content {
+        width: 100%;
+        margin: 0 auto 20px auto;
+        padding: 20px;
+    }
+
+    footer .head-content {
+        flex-wrap: wrap;
+        width: var(--max-width);
+    }
+
+    footer .head .head-content a {
+        margin: 10px 0;
+    }
+
+    footer .socail {
+        flex-wrap: wrap;
+    }
+}
