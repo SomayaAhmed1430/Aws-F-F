@@ -34,6 +34,16 @@ namespace Aws_F_F.Controllers
             return View(videos);
         }
 
+        public IActionResult VideoDetails(int id)
+        {
+            var video = _context.Videos.FirstOrDefault(a => a.Id == id);
+            if (video == null)
+            {
+                return NotFound();
+            }
+            return View(video);
+        }
+
         public IActionResult Articles()
         {
             var articles = _context.Articles.OrderByDescending(a => a.PublishDate).ToList();

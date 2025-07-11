@@ -2,27 +2,35 @@
 
 @{
     Layout = "~/Views/Shared/_MainLayout.cshtml";
-    ViewData["Title"] = "Home Page";
+    ViewData["Title"] = "اللقاءات التلفزيونية";
+    // ViewData["FavIcon"] = "~/";
 }
 
-<section class="videos container">
-    <h2 class="text-center">اللقاءات والفيديوهات</h2>
-    <div class="row">
+<html>
+    <head>
+        <link rel="stylesheet" href="~/css/videos.css" />
+    </head>
+
+<section class="container">
+    <header>
+        <h2>اللقاءات التلفزيونية و الفيديوهات</h2>
+    </header>
+    <div class="video">
         @foreach (var item in Model)
         {
-            <div class="col-md-6 mb-4">
-                <div class="card shadow-sm p-3">
-                    <h5>@item.Title</h5>
-                    @if (!string.IsNullOrEmpty(item.VideoPath))
-                    {
-                        <video width="100%" controls>
-                            <source src="@item.VideoPath" type="video/mp4">
-                            المتصفح لا يدعم عرض الفيديو
-                        </video>
-                    }
-                    <p class="mt-2">@item.Description</p>
-                </div>
-            </div>
+                @if (!string.IsNullOrEmpty(item.VideoPath))
+                {
+                    <a asp-controller="Home" asp-action="VideoDetails" asp-route-id="@item.Id">
+                        <div class="content">
+                            <video style="width:100%;">
+                                <source src="@item.VideoPath" type="video/mp4">
+                                المتصفح لا يدعم عرض الفيديو
+                            </video>
+                            <h5 class="h5">@item.Title</h5>
+                        </div>
+                    </a>
+                }
         }
     </div>
 </section>
+</html>

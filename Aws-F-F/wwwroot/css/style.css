@@ -1,10 +1,11 @@
 ﻿* {
-    padding: 00;
+    padding: 0;
     margin: 0;
     box-sizing: border-box;
     font-family: careemregu;
     line-height: 30px;
     list-style: none;
+/*    border: 1px solid red ;*/
 }
 
 @font-face {
@@ -248,7 +249,7 @@ footer {
             display: flex;
             align-items: center;
             justify-content: space-between;
-            margin: 0 auto 20px auto;
+            margin: 0 auto 00px auto;
             padding: 20px 0;
         }
 
@@ -398,7 +399,7 @@ footer {
 
 @media screen and (max-width: 840px) {
     :root {
-        --max-width: 400px;
+        --max-width: 600px;
         --font-size: 14px;
     }
 
@@ -490,6 +491,11 @@ footer {
 }
 
 @media screen and (max-width: 680px) {
+    :root {
+        --max-width: 400px;
+        --font-size: 14px;
+    }
+
     footer .head-content {
         flex-wrap: wrap;
     }
@@ -500,7 +506,7 @@ footer {
 
     footer .head .head-content {
         width: var(--max-width);
-        margin: 0 auto 20px auto;
+        margin: 0 auto 0 auto;
         padding: 20px;
     }
 }
@@ -536,7 +542,7 @@ footer {
 
     footer .head .head-content {
         width: 100%;
-        margin: 0 auto 20px auto;
+        margin: 0 auto 0 auto;
         padding: 20px;
     }
 

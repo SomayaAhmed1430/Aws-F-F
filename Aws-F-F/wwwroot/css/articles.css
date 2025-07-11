@@ -1,0 +1,162 @@
+﻿* {
+/*border: 1px solid red;*/
+color: black;
+text-decoration: none;
+max-height: unset;
+}
+img{
+    object-fit:cover;
+}
+
+header {
+padding: 20px 0;
+text-align: center;
+font-weight: lighter;
+letter-spacing: -0.05em;
+}
+
+.content {
+/*border: 1px solid red;*/
+display: grid;
+grid-template-columns: 1fr 1fr 1fr 1fr;
+gap: 10px;
+}
+
+.content .card {
+position: relative;
+height: 285px;
+width: 100%;
+}
+
+.content .card::before {
+content: "....Loading";
+position: absolute;
+top: 0;
+left: 0;
+height: 200px;
+width: 100%;
+background: #f5f5f5;
+display: flex;
+align-items: center;
+justify-content: center;
+font-size: 11px;
+z-index: -1;
+}
+
+.content .card img {
+width: 100%;
+height: 200px;
+background: #ddd;
+}
+
+.content .card .text {
+position: absolute;
+bottom: 0;
+right: 0;
+height: 75px;
+width: 100%;
+padding: 0 10px ;
+}
+
+.content .card .text p {
+font-size: 12px;
+padding: 0;
+margin: 0;
+}
+
+
+@media screen and (max-width: 1470px) {
+    .container{
+        min-height: calc(100vh - 500px);
+    }
+    .container section {
+        margin: 0 0 70px 0;
+    }
+    .content .card {
+        height: 225px;
+    }
+
+        .content .card::before {
+            height: 150px;
+        }
+
+        .content .card img {
+            height: 150px;
+        }
+
+}
+@media screen and (max-width: 1350px) {
+    .content{
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+        .content .card {
+            height: 257px;
+        }
+            .content .card::before {
+                height: 180px;
+            }
+
+            .content .card img {
+                height: 180px;
+            }
+}
+@media screen and (max-width: 1075px) {
+    .content {
+        grid-template-columns: 1fr 1fr;
+    }
+        .content .card {
+            height: 270px;
+        }
+            .content .card img {
+                height: 192px;
+            }
+            .content .card::before {
+                height: 192px;
+            }
+
+}
+@media screen and (max-width: 840px) {
+    .content .card {
+        height: 251px;
+    }
+
+        .content .card img {
+            height: 174px;
+        }
+
+        .content .card::before {
+            height: 174px;
+        }
+}
+@media screen and (max-width: 680px) {
+    .content {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+        .content .card {
+            height: 292px;
+        }
+        body{
+                max-height: unset
+        }
+            .content .card img {
+                height: 210px;
+            }
+
+            .content .card::before {
+                height: 210px;
+            }
+}
+
+@media screen and (max-width: 680px) {
+    .content .card {
+        height: 265px;
+    }
+    .content .card img {
+        height: 187px;
+    }
+
+    .content .card::before {
+        height: 187px;
+    }
+}

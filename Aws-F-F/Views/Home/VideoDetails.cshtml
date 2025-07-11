@@ -1,0 +1,15 @@
+﻿@model Video
+@{
+    Layout = "~/Views/Shared/_MainLayout.cshtml";
+    ViewData["Title"] = "اللقاءات التلفزيونية";
+}
+
+<div class="container">
+    <video controls="controls" style="width:100%;">
+        <source src="@Model.VideoPath" type="video/mp4" />
+    </video>
+    <div class="text">
+        <h2>@Model.Title</h2>
+        <p>@Model.Description</p>
+    </div>
+</div>
