@@ -1,11 +1,13 @@
 ﻿using System.Threading.Tasks;
 using Aws_F_F.Data;
+using Aws_F_F.Filters;
 using Aws_F_F.Models;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 
 namespace Aws_F_F.Controllers
 {
+    [AdminOnly]
     public class VideosController : Controller
     {
         private readonly ApplicationDbContext _context;

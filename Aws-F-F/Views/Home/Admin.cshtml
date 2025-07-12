@@ -1,0 +1,20 @@
+﻿@{
+    Layout = "~/Views/Shared/_DashboardLayout.cshtml";
+    ViewData["Title"] = "تسجيل دخول";
+}
+
+<h2 class="text-center">تسجيل دخول لوحة التحكم</h2>
+
+@if (!string.IsNullOrEmpty(ViewBag.Error))
+{
+    <div class="alert alert-danger text-center">@ViewBag.Error</div>
+}
+
+<form method="post" asp-action="Admin" asp-controller="Home">
+    <div class="form-group">
+        <label>كلمة المرور</label>
+        <input type="password" name="password" class="form-control" required />
+    </div>
+    <br />
+    <button type="submit" class="btn btn-primary">دخول</button>
+</form>

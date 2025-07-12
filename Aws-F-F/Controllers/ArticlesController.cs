@@ -2,9 +2,11 @@
 using Aws_F_F.Models;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
+using Aws_F_F.Filters;
 
 namespace Aws_F_F.Controllers
 {
+    [AdminOnly]
     public class ArticlesController : Controller
     {
         private readonly ApplicationDbContext _context;

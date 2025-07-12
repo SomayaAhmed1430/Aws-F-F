@@ -1,4 +1,4 @@
-using System.Diagnostics;
+﻿using System.Diagnostics;
 using Aws_F_F.Models;
 using Aws_F_F.Data;
 using Microsoft.AspNetCore.Mvc;
@@ -59,6 +59,32 @@ namespace Aws_F_F.Controllers
             }
             return View(article);
         }
+
+
+        // GET
+        [HttpGet]
+        public IActionResult Admin()
+        {
+            return View();
+        }
+
+        // POST
+        [HttpPost]
+        public IActionResult Admin(string password)
+        {
+            if (password == "myAdmin123")
+            {
+                HttpContext.Session.SetString("IsAdmin", "true"); // ✅ نحط علامة الدخول
+                return RedirectToAction("Index", "Dashboard");
+            }
+            else
+            {
+                ViewBag.Error = "كلمة المرور غير صحيحة";
+                return View();
+            }
+        }
+
+
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public IActionResult Error()

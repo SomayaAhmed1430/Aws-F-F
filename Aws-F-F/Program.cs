@@ -13,6 +13,8 @@ namespace Aws_F_F
             // Add services to the container.
             builder.Services.AddControllersWithViews();
 
+            builder.Services.AddSession(); // ?????? ??? Session
+
             builder.Services.AddDbContext<ApplicationDbContext>(options =>
                 options.UseSqlServer(builder.Configuration.GetConnectionString("cs")));
 
@@ -36,6 +38,8 @@ namespace Aws_F_F
             app.UseStaticFiles();
 
             app.UseRouting();
+
+            app.UseSession(); // ?????? ??? Session ?? ????????
 
             app.UseAuthorization();
 
