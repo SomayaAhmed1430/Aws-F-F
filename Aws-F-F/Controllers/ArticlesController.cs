@@ -117,11 +117,15 @@ namespace Aws_F_F.Controllers
             if (id != article.Id)
                 return NotFound();
 
+            var existingArticle = await _context.Articles.AsNoTracking().FirstOrDefaultAsync(a => a.Id == id);
+            if (existingArticle == null)
+                return NotFound();
+
             if (ModelState.IsValid)
             {
                 try
                 {
-                    if (imageFile != null)
+                    if (imageFile != null && imageFile.Length > 0)
                     {
                         var uploadsFolder = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot/uploads");
                         Directory.CreateDirectory(uploadsFolder);
@@ -135,6 +139,13 @@ namespace Aws_F_F.Controllers
 
                         article.ImagePath = "/uploads/" + fileName;
                     }
+                    else
+                    {
+                        // احتفظ بالصورة القديمة
+                        article.ImagePath = existingArticle.ImagePath;
+                    }
+
+                    article.PublishDate = existingArticle.PublishDate; // احتفظ بتاريخ النشر القديم
 
                     _context.Update(article);
                     await _context.SaveChangesAsync();
@@ -152,6 +163,7 @@ namespace Aws_F_F.Controllers
 
             return View(article);
         }
+
 
 
         public async Task<IActionResult> Delete(int? id)

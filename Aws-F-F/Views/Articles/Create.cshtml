@@ -19,6 +19,7 @@
 <form asp-action="Create" method="post" enctype="multipart/form-data" onsubmit="return submitForm()">
     <div class="form-group">
         <label>العنوان</label>
+        <span asp-validation-for="Title" class="text-danger" style="color:red;"></span>
         <input asp-for="Title" class="form-control" />
     </div>
 
@@ -34,6 +35,7 @@
 
         <!-- هنحط المحتوى هنا بشكل مخفي علشان يتبعت مع الفورم -->
         <input type="hidden" id="Content" name="Content" />
+        <span asp-validation-for="Content" class="text-danger" style="color:red;"></span>
     </div>
 
     <button type="submit" class="btn btn-success">حفظ</button>
