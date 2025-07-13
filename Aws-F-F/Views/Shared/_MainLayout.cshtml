@@ -7,6 +7,18 @@
 </head>
 <body>
 
+    <ul class="mainmainmain">
+        <li>
+			<a href="/Home/index">الرئيسية</a>
+        </li>
+        <li>
+            <a href="/Home/videos">اللقاءات</a>
+        </li>
+        <li>
+            <a href="/Home/articles">المقالات</a>
+        </li>
+    </ul>
+
     @RenderBody()
 
     <footer>
@@ -37,7 +49,7 @@
                 </a>
             </li>
             <li>
-                <a href="#">
+                <a href="@Html.Raw("https://youtube.com/@awsffcs?si=5ySO2xYh0kF7lrwi")">
                     <img src="~/images/icons/youtube.png" alt="socail" />
                 </a>
             </li>
@@ -52,7 +64,7 @@
                 </a>
             </li>
             <li>
-                <a href="#">
+                <a href="@Html.Raw("https://www.tiktok.com/@awsffcs")">
                     <img src="~/images/icons/tiktok.png" alt="socail" />
                 </a>
             </li>

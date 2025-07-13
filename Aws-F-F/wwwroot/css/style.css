@@ -404,7 +404,7 @@ footer {
     }
 
     .hero {
-        min-height: 611px;
+        min-height: 759px;
         padding: 50px 0;
     }
 
@@ -496,6 +496,11 @@ footer {
         --font-size: 14px;
     }
 
+    .hero {
+        min-height: 652px;
+        padding: 50px 0;
+    }
+
     footer .head-content {
         flex-wrap: wrap;
     }
@@ -518,7 +523,7 @@ footer {
     }
 
     .hero {
-        min-height: 638px;
+        min-height: 670px;
         padding: 50px 0;
     }
 
@@ -559,3 +564,22 @@ footer {
         flex-wrap: wrap;
     }
 }
+
+
+.mainmainmain {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 1;
+    display: flex;
+    gap: 20px;
+    text-decoration: none;
+    width: var(--max-width);
+    background: #0000;
+    margin: 20px auto;
+}
+    .mainmainmain li a {
+        color: #fff;
+        text-decoration: none;
+    }

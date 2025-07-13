@@ -10,6 +10,35 @@
     <div class="alert alert-danger text-center">@ViewBag.Error</div>
 }
 
+<style>
+    input{
+        width: calc( 100% - 30px);
+        height: 30px;
+        font-size: 14px;
+    }
+
+    form {
+        position:relative;
+        padding: 0;
+        box-shadow:none;
+    }
+    label{
+        font-size: 14px;
+    }
+    .alert-danger{
+        color:red;
+        height: 30px;
+        width: calc( 100% - 60px);
+        background: #ff000030;
+		display: flex;
+        align-items: center;
+        justify-content:start;
+        padding: 5px 20px;
+        margin-bottom:  10px ;
+        border-radius: 4px;
+        font-size: 14px;
+    }
+</style>
 <form method="post" asp-action="Admin" asp-controller="Home">
     <div class="form-group">
         <label>كلمة المرور</label>

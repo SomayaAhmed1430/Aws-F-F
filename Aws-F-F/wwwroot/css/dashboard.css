@@ -4,15 +4,21 @@
     padding: 0;
     background-color: #ffffff; /* خلفية بيضاء */
     direction: rtl;
+    overflow-x: hidden;  
 }
 
 .dashboard-container {
-    display: flex;
-    flex-direction: row; /* علشان السايد بار يجي على اليمين */
+    display: grid;
+    grid-template-columns: 1fr 260px;
+    width: 100%;
     min-height: 100vh;
 }
 
 .sidebar {
+    position: fixed;
+    top: 0;
+    right: 0;
+    height: 100vh;
     width: 220px;
     background-color: #000; /* أسود */
     color: #fff; /* نص أبيض */
@@ -26,7 +32,7 @@
     }
 
         .sidebar ul li {
-            margin-bottom: 15px;
+            padding: 10px 0;
         }
 
             .sidebar ul li a {
@@ -42,7 +48,8 @@
                 }
 
 .main-content {
-    flex: 1;
+    position:relative;
+    transform: translateX(-260px);
     padding: 20px;
     background-color: #fff;
     color: #000;
@@ -80,7 +87,7 @@ form {
     form input[type="file"],
     form textarea,
     form select {
-        width: 100%;
+        width: calc(100% - 20px);
         padding: 10px;
         margin-bottom: 15px;
         border: 1px solid #ccc;
@@ -98,6 +105,7 @@ form {
         border: none;
         border-radius: 4px;
         cursor: pointer;
+
     }
 
         form input[type="submit"]:hover,
@@ -106,6 +114,10 @@ form {
             background-color: #333;
         }
 
+.table-content {
+    width: 100%;
+    overflow-x: scroll;
+}
 table {
     width: 100%;
     border-collapse: collapse;
@@ -113,22 +125,20 @@ table {
     background-color: #fff;
     border-radius: 6px;
     overflow: hidden;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
 }
 
 thead {
     background-color: #000;
     color: #fff;
+    text-align: right;
 }
 
     thead th {
         padding: 12px;
-        text-align: center;
     }
 
 tbody td {
     padding: 10px;
-    text-align: center;
     color: #000;
     border-top: 1px solid #ddd;
     vertical-align: middle;
@@ -138,6 +148,11 @@ tbody tr:hover {
     background-color: #f0f0f0;
 }
 
+img,video{
+    height: 50px;
+    width: 100px;
+    object-fit: cover;
+}
 .btn {
     padding: 6px 12px;
     border-radius: 4px;
@@ -178,4 +193,39 @@ tbody tr:hover {
 
     .btn-success:hover {
         background-color: #333;
+    }
+
+    @media screen and (max-width: 1000px) {
+        .dashboard-container {
+            display: block;
+        }
+
+        h2 {
+            font-size: 18px;
+        }
+
+        .sidebar {
+            position: unset;
+            width: 100%;
+            height: 30px;
+        }
+
+            .sidebar ul {
+                list-style: none;
+                padding: 0;
+                display: flex;
+                margin: 0;
+            }
+
+                .sidebar ul li {
+                    padding: 0;
+                }
+
+        .main-content {
+            transform: translateX(0); /* عرض المحتوى الرئيسي بالكامل */
+            padding: 20px;
+        }
+        .table {
+            width: 800px;
+        }
     }

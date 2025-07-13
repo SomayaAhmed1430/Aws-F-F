@@ -22,11 +22,14 @@ grid-template-columns: 1fr 1fr 1fr 1fr;
 gap: 10px;
 }
 
-.content .card {
-position: relative;
-height: 285px;
-width: 100%;
-}
+    .content .card {
+        position: relative;
+        height: 285px;
+        width: 100%;
+        border: 1px solid #ddd;
+        border-radius: 5px;
+        overflow: hidden;
+    }
 
 .content .card::before {
 content: "....Loading";
@@ -159,4 +162,8 @@ margin: 0;
     .content .card::before {
         height: 187px;
     }
+}
+.mainmainmain li a {
+    color: #000;
+    text-decoration: none;
 }

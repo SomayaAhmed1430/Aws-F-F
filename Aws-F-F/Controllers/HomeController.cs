@@ -75,7 +75,7 @@ namespace Aws_F_F.Controllers
             if (password == "myAdmin123")
             {
                 HttpContext.Session.SetString("IsAdmin", "true"); // ✅ نحط علامة الدخول
-                return RedirectToAction("Index", "Dashboard");
+                return RedirectToAction("Index", "Articles");
             }
             else
             {

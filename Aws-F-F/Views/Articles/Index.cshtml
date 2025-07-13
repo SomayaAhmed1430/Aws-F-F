@@ -9,33 +9,35 @@
 
 <a class="btn btn-primary" asp-action="Create">إضافة مقال جديد</a>
 
-<table class="table mt-3">
-    <thead>
-        <tr>
-            <th>العنوان</th>
-            <th>الصورة</th>
-            <th>تاريخ النشر</th>
-            <th>إجراءات</th>
-        </tr>
-    </thead>
-    <tbody>
-        @foreach (var item in Model)
-        {
+<div class="table-content">
+    <table class="table mt-3">
+        <thead>
             <tr>
-                <td>@item.Title</td>
-                <td>
-                    @if (!string.IsNullOrEmpty(item.ImagePath))
-                    {
-                        <img src="@item.ImagePath" width="100" />
-                    }
-                </td>
-                <td>@item.PublishDate.ToShortDateString()</td>
-                <td>
-                    <a asp-action="Details" asp-route-id="@item.Id" class="btn btn-info btn-sm">عرض</a>
-                    <a asp-action="Edit" asp-route-id="@item.Id" class="btn btn-info btn-sm">تعديل</a>
-                    <a asp-action="Delete" asp-route-id="@item.Id" class="btn btn-danger btn-sm">حذف</a>
-                </td>
+                <th>العنوان</th>
+                <th>الصورة</th>
+                <th>تاريخ النشر</th>
+                <th>إجراءات</th>
             </tr>
-        }
-    </tbody>
-</table>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>@item.Title</td>
+                    <td>
+                        @if (!string.IsNullOrEmpty(item.ImagePath))
+                        {
+                            <img src="@item.ImagePath" width="100" />
+                        }
+                    </td>
+                    <td>@item.PublishDate.ToShortDateString()</td>
+                    <td>
+                        <a asp-action="Details" asp-route-id="@item.Id" class="btn btn-info btn-sm">عرض</a>
+                        <a asp-action="Edit" asp-route-id="@item.Id" class="btn btn-info btn-sm">تعديل</a>
+                        <a asp-action="Delete" asp-route-id="@item.Id" class="btn btn-danger btn-sm">حذف</a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>

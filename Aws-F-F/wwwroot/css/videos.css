@@ -1,7 +1,7 @@
 ﻿.container {
     min-height: calc(100vh - 500px);
 }
-a {
+.video a {
     text-decoration: none;
     display: -webkit-box;
     -webkit-line-clamp: 2; /* عدد السطور اللي عايزاهم */
@@ -10,6 +10,9 @@ a {
     text-overflow: ellipsis;
     direction: rtl;
     text-align: right;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    overflow: hidden;
 }
 .video {
     display: grid;
@@ -23,6 +26,7 @@ a {
 
 video {
     user-select: none;
+
 }
 
 .video .content {
