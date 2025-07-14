@@ -20,6 +20,9 @@ namespace Aws_F_F.Controllers
 
         public IActionResult Index()
         {
+            var videoCount = _context.Videos.Count();
+            ViewBag.VideoCount = videoCount;
+
             return View();
         }
 
