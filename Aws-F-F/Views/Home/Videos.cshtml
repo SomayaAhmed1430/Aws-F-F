@@ -24,18 +24,18 @@
     <div class="video">
         @foreach (var item in Model)
         {
-                @if (!string.IsNullOrEmpty(item.VideoPath))
-                {
-                    <a asp-controller="Home" asp-action="VideoDetails" asp-route-id="@item.Id">
-                        <div class="content">
-                            <video style="width:100%;">
-                                <source src="@item.VideoPath" type="video/mp4">
-                                المتصفح لا يدعم عرض الفيديو
-                            </video>
-                            <h5 class="h5">@item.Title</h5>
-                        </div>
-                    </a>
-                }
+            @if (!string.IsNullOrEmpty(item.VideoPath))
+            {
+                <a asp-controller="Home" asp-action="VideoDetails" asp-route-id="@item.Id">
+                    <div class="content">
+                        <video style="width:100%;">
+                            <source src="@item.VideoPath" type="video/mp4">
+                            المتصفح لا يدعم عرض الفيديو
+                        </video>
+                        <h5 class="h5">@item.Title</h5>
+                    </div>
+                </a>
+            }
         }
     </div>
 </section>

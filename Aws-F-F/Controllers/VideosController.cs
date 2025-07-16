@@ -42,7 +42,7 @@ namespace Aws_F_F.Controllers
                 if (VideoFile != null && VideoFile.Length > 0)
                 {
                     string uploadsFolder = Path.Combine(_webHostEnvironment.WebRootPath, "videos");
-                    Directory.CreateDirectory(uploadsFolder); // لو مجاش يعمل الفولدر
+                    Directory.CreateDirectory(uploadsFolder); 
                     string uniqueFileName = Guid.NewGuid().ToString() + Path.GetExtension(VideoFile.FileName);
                     string filePath = Path.Combine(uploadsFolder, uniqueFileName);
 
@@ -51,7 +51,7 @@ namespace Aws_F_F.Controllers
                         await VideoFile.CopyToAsync(fileStream);
                     }
 
-                    video.VideoPath = "/videos/" + uniqueFileName;
+                    video.VideoPath = "https://awsffcs.com/videos/" + uniqueFileName;
                 }
 
                 video.UploadDate = DateTime.Now;
@@ -128,7 +128,7 @@ namespace Aws_F_F.Controllers
                             await VideoFile.CopyToAsync(stream);
                         }
 
-                        video.VideoPath = "/videos/" + uniqueFileName;
+                        video.VideoPath = "https://awsffcs.com/videos/" + uniqueFileName;
                     }
                     else
                     {

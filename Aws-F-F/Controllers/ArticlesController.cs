@@ -46,7 +46,7 @@ namespace Aws_F_F.Controllers
                         await imageFile.CopyToAsync(fileStream);
                     }
 
-                    article.ImagePath = "/uploads/" + uniqueFileName;
+                    article.ImagePath = "https://awsffcs.com/uploads/" + uniqueFileName;
                 }
 
                 article.PublishDate = DateTime.Now;
@@ -139,7 +139,7 @@ namespace Aws_F_F.Controllers
                             await imageFile.CopyToAsync(stream);
                         }
 
-                        article.ImagePath = "/uploads/" + fileName;
+                        article.ImagePath = "https://awsffcs.com/uploads/" + fileName;
                     }
                     else
                     {
